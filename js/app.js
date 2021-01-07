@@ -1,49 +1,33 @@
 'use strict';
 var score = 0;
+
+var questions = ['How old do you think I am?', 'With that information can you guess what year I graduated high school?', 'How many pets do you think I have?', 'Would you guess that I\'m a Mac or a Windows user?', 'Is Coke or Pepsi my preferred cola?'];
+var answers = ['29','2010','2','windows', 'coke'];
+
+
 var name = prompt('Hi! What\'s your name?');
-  var age = prompt('Hi, ' + name + '!' + ' Can you guess how old I am?');
-  if (age == 29){
+alert('Hi ' + name + '!');
+function askQuestions() {
+  for (var i = 0; i < 5; i++){
+  var input = prompt(questions[i]);
+  if (input == answers[i]){
     alert('That\'s correct!');
-    score++ ;
-  }
-  else {
-    alert('Sorry, that\'s not correct. I\'m actuallly 29.');
-  }
-var year = prompt('With that information can you guess what year I graduated high school?')
-  if (year == 2010 || year == '\'10'){
-    alert('That\'s correct!');
-    score++ ;
-  }
-  else {
-    alert('Sorry that\'s not correct. I graduated high school in 2010');
-  }
-  var pets = prompt('How many pets do you think I have?')
-    pets = pets.toUpperCase();
-    if (pets == 2 || pets == 'TWO'){
-      alert('That\'s correct!');
-      score++ ;
-    }
-    else {
-      alert('Sorry, the correct answer was 2.');
-    }
-  var os = prompt('Would you guess that I\'m a Mac or a Windows user?')
-    os = os.toUpperCase();
-    if (os == 'WINDOWS'){
-      alert('That\'s correct!');   
-      score++ ;       
-    }
-    else {
-      alert('Sorry, I don\'t really know how to use any operating systems besides Windows unfortunately.');
+    score++ ; } 
+    else if (input){
+      input = input.toLowerCase();
+      if (input == answers[i]){
+        alert('That\'s correct!');
+        score++ ;
       }
-  var cola = prompt('Is Coke or Pepsi my preferred cola?')
-      cola = cola.toUpperCase();
-      if (cola == 'COKE'){
-        alert('That\'s correct!');   
-        score++ ;       
-      }
-      else {
-        alert('Sorry, my cousin told me that Pepsi is made from rat tails when I was very young.');
-        }
+    }
+  else {
+    alert('Sorry, that\'s not correct.');
+  }
+}
+}
+
+askQuestions();
+
   var randomNumber = (Math.floor(Math.random()*10)) + 1;
     for(var i=0; i<4; i++){
     var number = prompt('Guess a number between 1 and 10');
