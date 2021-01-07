@@ -1,49 +1,63 @@
 'use strict';
 var score = 0;
+var questions = ['Hi! What\'s your name?', 'With that information can you guess what year I graduated high school?', 'How many pets do you think I have?', 'Would you guess that I\'m a Mac or a Windows user?', 'Is Coke or Pepsi my preferred cola?'];
+var answers = ['29','2010','2','windows', 'coke'];
+
 var name = prompt('Hi! What\'s your name?');
-  var age = prompt('Hi, ' + name + '!' + ' Can you guess how old I am?');
-  if (age == 29){
+alert('Hi' + name + '!');
+function age() {
+  var age = prompt(questions[0]);
+  if (age == answers[0]){
     alert('That\'s correct!');
     score++ ;
   }
   else {
     alert('Sorry, that\'s not correct. I\'m actuallly 29.');
   }
-var year = prompt('With that information can you guess what year I graduated high school?')
-  if (year == 2010 || year == '\'10'){
+}
+  function school() {
+var year = prompt(questions[1]);
+  if (year == answers[1]){
     alert('That\'s correct!');
     score++ ;
   }
   else {
     alert('Sorry that\'s not correct. I graduated high school in 2010');
   }
-  var pets = prompt('How many pets do you think I have?')
-    pets = pets.toUpperCase();
-    if (pets == 2 || pets == 'TWO'){
+}
+  function pets() {
+  var pets = prompt(questions[2]);
+    pets = pets.toLowerCase();
+    if (pets == answers[2]){
       alert('That\'s correct!');
       score++ ;
     }
     else {
       alert('Sorry, the correct answer was 2.');
     }
-  var os = prompt('Would you guess that I\'m a Mac or a Windows user?')
-    os = os.toUpperCase();
-    if (os == 'WINDOWS'){
+  }
+  function os() {
+  var os = prompt(questions[3]);
+    os = os.toLowerCase();
+    if (os == answers[3]){
       alert('That\'s correct!');   
       score++ ;       
     }
     else {
       alert('Sorry, I don\'t really know how to use any operating systems besides Windows unfortunately.');
       }
-  var cola = prompt('Is Coke or Pepsi my preferred cola?')
-      cola = cola.toUpperCase();
-      if (cola == 'COKE'){
+    }
+  function cola() { 
+  var cola = prompt(questions[4]);
+      cola = cola.toLowerCase();
+      if (cola == answers[4]){
         alert('That\'s correct!');   
         score++ ;       
       }
       else {
         alert('Sorry, my cousin told me that Pepsi is made from rat tails when I was very young.');
         }
+      }
   var randomNumber = (Math.floor(Math.random()*10)) + 1;
     for(var i=0; i<4; i++){
     var number = prompt('Guess a number between 1 and 10');
@@ -94,3 +108,8 @@ var year = prompt('With that information can you guess what year I graduated hig
   alert('Your final score on this quiz was ' + score + '/7!');
   
 
+age();
+school();
+pets();
+os();
+cola();
