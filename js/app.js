@@ -63,6 +63,34 @@ var year = prompt('With that information can you guess what year I graduated hig
       if (number !== randomNumber){
         alert('Actually, the number was ' + randomNumber + '.');
       }
-  alert('Your score on this quiz was ' + score + '/7!');
+  var answers = ['GREEN', 'TAUPE', 'PINK', 'ORANGE'];
+    for (var x=0; x<6; x++){
+      var color = prompt('Can you guess one of the four most influential colors of the day?');
+        if (color.toUpperCase() === answers[0]){
+          alert('That\'s a correct answer!');
+          score++;
+          break;
+        }
+        else if (color.toUpperCase() === answers[1]){
+          alert('That\'s a correct answer!');
+          score++;
+          break;
+        }
+        else if (color.toUpperCase() === answers[2]){
+          alert('That\'s a correct answer!');
+          score++;
+          break;
+        }
+        else if (color.toUpperCase() === answers[1]){
+          alert('That\'s a correct answer!');
+          score++;
+          break;
+        }
+        else{
+          alert('Sorry, that is not a correct answer!');
+        }
+      }
+      alert('The correct answers were: green, taupe, pink, and orange!');
+  alert('Your final score on this quiz was ' + score + '/7!');
   
 
