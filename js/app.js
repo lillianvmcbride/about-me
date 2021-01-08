@@ -4,9 +4,10 @@ var score = 0;
 var questions = ['How old do you think I am?', 'With that information can you guess what year I graduated high school?', 'How many pets do you think I have?', 'Would you guess that I\'m a Mac or a Windows user?', 'Is Coke or Pepsi my preferred cola?'];
 var answers = ['29','2010','2','windows', 'coke'];
 
-
 var name = prompt('Hi! What\'s your name?');
 alert('Hi ' + name + '!');
+
+function takeQuiz() {
 function askQuestions() {
   for (var i = 0; i < 5; i++){
   var input = prompt(questions[i]);
@@ -25,9 +26,7 @@ function askQuestions() {
   }
 }
 }
-
 askQuestions();
-
   var randomNumber = (Math.floor(Math.random()*10)) + 1;
     for(var i=0; i<4; i++){
     var number = prompt('Guess a number between 1 and 10');
@@ -76,5 +75,5 @@ askQuestions();
       }
       alert('The correct answers were: green, taupe, pink, and orange!');
   alert('Your final score on this quiz was ' + score + '/7!');
-  
+ }
 
