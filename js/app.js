@@ -1,17 +1,13 @@
 'use strict';
 var score = 0;
 
-var questions = ['How old do you think I am?', 'With that information can you guess what year I graduated high school?', 'How many pets do you think I have?', 'Would you guess that I\'m a Mac or a Windows user?', 'Is Coke or Pepsi my preferred cola?'];
-var answers = ['29','2010','2','windows', 'coke'];
-
-var name = prompt('Hi! What\'s your name?');
-document.getElementById("user").innerHTML = "Hi " + name + "!";
-
 function takeQuiz() {
 function askQuestions() {
+  var questions = ['How old do you think I am?', 'With that information can you guess what year I graduated high school?', 'How many pets do you think I have?', 'Would you guess that I\'m a Mac or a Windows user?', 'Is Coke or Pepsi my preferred cola?'];
+  var answers = ['29','2010','2','windows', 'coke'];
   for (var i = 0; i < 5; i++){
   var input = prompt(questions[i]);
-  if (input == answers[i+1]) {
+  if (input == answers[i]) {
     alert('That\'s correct!');
     score++ ; } 
     else if (input){
@@ -20,10 +16,13 @@ function askQuestions() {
         alert('That\'s correct!');
         score++ ;
       }
-    }
-  else {
+     else {
     alert('Sorry, that\'s not correct.');
-  }
+     }
+}
+else {
+  alert('Sorry, that\'s not correct.');
+}
 }
 }
 askQuestions();
